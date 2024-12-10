@@ -55,8 +55,9 @@ h2, h3, h4 {
 /* Estilo para las secciones */
 .section {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center; /* Centra las columnas horizontalmente */
+    align-items: center; /* Centra las columnas verticalmente */
+    gap: 20px; /* Añade espacio entre las columnas */
     margin-bottom: 2rem;
 }
 
@@ -66,15 +67,22 @@ h2, h3, h4 {
     padding: 0 20px;
 }
 
-.left-column {
-    order: 1;
+/* La columna izquierda y derecha tienen un tamaño igual */
+.left-column, .right-column {
+    width: 30%;
 }
 
-.right-column {
-    order: 2;
+/* La columna central será más ancha */
+.center-column {
+    width: 40%;
 }
 
-/* Cambiar el orden de columnas */
+/* Centrado del contenido de la columna central */
+.center-column .highlight-box {
+    text-align: center;
+}
+
+/* Cambiar el orden de las columnas para pantallas grandes */
 .section:nth-child(even) .left-column {
     order: 2;
 }
@@ -83,46 +91,19 @@ h2, h3, h4 {
     order: 1;
 }
 
-/* Cambiar el orden de las columnas para esta sección específica */
-.section:nth-child(4) .left-column {
-    order: 1; /* Asegura que esta columna esté en la izquierda */
-}
-
-.section:nth-child(4) .right-column {
-    order: 2; /* La columna de la derecha queda a la derecha */
-}
-
-/* Centrado de la columna */
-.center-column {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Centrar solo el texto del último recuadro */
-.center-box-text {
-    text-align: center;
-}
-
-/* Centrado de la sección introductoria */
-.intro {
-    text-align: center;
-    padding: 20px;
-}
-
-.center-content {
-    display: inline-block;
-    text-align: left;
-    max-width: 800px;
-}
-
 /* Estilo responsivo para pantallas pequeñas */
 @media (max-width: 768px) {
     .section {
-        flex-direction: column;
+        flex-direction: column; /* Pone las columnas en una fila */
     }
+    
     .column {
         margin-bottom: 1rem;
+        width: 100%; /* Asegura que las columnas ocupen todo el ancho */
+    }
+
+    .center-column {
+        width: 100%; /* La columna central ocupa todo el espacio en móviles */
     }
 
     /* Ajuste de títulos en pantallas pequeñas */
@@ -132,6 +113,5 @@ h2, h3, h4 {
         padding: 10px;
     }
 }
-
 
 
