@@ -55,9 +55,8 @@ h2, h3, h4 {
 /* Estilo para las secciones */
 .section {
     display: flex;
-    justify-content: center; /* Centra las columnas horizontalmente */
-    align-items: center; /* Centra las columnas verticalmente */
-    gap: 20px; /* Añade espacio entre las columnas */
+    justify-content: space-between;
+    align-items: center; /* Centra verticalmente las columnas */
     margin-bottom: 2rem;
 }
 
@@ -67,22 +66,20 @@ h2, h3, h4 {
     padding: 0 20px;
 }
 
-/* La columna izquierda y derecha tienen un tamaño igual */
 .left-column, .right-column {
-    width: 30%;
+    width: 30%; /* Las columnas laterales tendrán un 30% de ancho */
 }
 
-/* La columna central será más ancha */
 .center-column {
-    width: 40%;
+    width: 40%; /* La columna central tiene un 40% de ancho */
 }
 
 /* Centrado del contenido de la columna central */
 .center-column .highlight-box {
-    text-align: center;
+    text-align: center; /* Asegura que el texto del centro esté alineado */
 }
 
-/* Cambiar el orden de las columnas para pantallas grandes */
+/* Cambio de orden de las columnas en pantallas grandes */
 .section:nth-child(even) .left-column {
     order: 2;
 }
@@ -94,16 +91,12 @@ h2, h3, h4 {
 /* Estilo responsivo para pantallas pequeñas */
 @media (max-width: 768px) {
     .section {
-        flex-direction: column; /* Pone las columnas en una fila */
+        flex-direction: column; /* Las columnas se apilan en móviles */
     }
     
     .column {
-        margin-bottom: 1rem;
         width: 100%; /* Asegura que las columnas ocupen todo el ancho */
-    }
-
-    .center-column {
-        width: 100%; /* La columna central ocupa todo el espacio en móviles */
+        margin-bottom: 1rem; /* Espacio entre las columnas */
     }
 
     /* Ajuste de títulos en pantallas pequeñas */
