@@ -1,3 +1,4 @@
+/* styles.css */
 /* Estilo para el cuerpo */
 body {
     font-family: Arial, sans-serif;
@@ -56,7 +57,7 @@ h2, h3, h4 {
 .section {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Centra verticalmente las columnas */
+    align-items: center;
     margin-bottom: 2rem;
 }
 
@@ -67,16 +68,16 @@ h2, h3, h4 {
 }
 
 .left-column, .right-column {
-    width: 30%; /* Las columnas laterales tendrán un 30% de ancho */
+    width: 30%;
 }
 
 .center-column {
-    width: 40%; /* La columna central tiene un 40% de ancho */
+    width: 40%;
 }
 
 /* Centrado del contenido de la columna central */
 .center-column .highlight-box {
-    text-align: center; /* Asegura que el texto del centro esté alineado */
+    text-align: center;
 }
 
 /* Cambio de orden de las columnas en pantallas grandes */
@@ -91,20 +92,20 @@ h2, h3, h4 {
 /* Estilo responsivo para pantallas pequeñas */
 @media (max-width: 768px) {
     .section {
-        flex-direction: column; /* Las columnas se apilan en móviles */
+        flex-direction: column;
     }
     
     .column {
-        width: 100%; /* Asegura que las columnas ocupen todo el ancho */
-        margin-bottom: 1rem; /* Espacio entre las columnas */
+        width: 100%;
+        margin-bottom: 1rem;
     }
 
-    /* Ajuste de títulos en pantallas pequeñas */
     .highlight-box h3 {
         text-align: center;
         font-size: 1.2rem;
         padding: 10px;
     }
 }
+
 
 
